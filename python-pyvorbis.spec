@@ -30,7 +30,7 @@ skompresowanego.
 Summary:	pyvorbis header and example programs
 Group:		Development/Languages/Python
 Requires:	%{name} = %{version}
-Obsolete:	pyvorbis-devel
+Obsoletes:	pyvorbis-devel
 
 %description devel
 pyvorbis is a wrapper for libvorbis, a compressed audio format
