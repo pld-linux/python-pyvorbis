@@ -8,6 +8,7 @@ Release:	1
 License:	GPL
 Group:		Libraries/Python
 Source0:	http://www.andrewchatham.com/pyogg/download/%{module}-%{version}.tar.gz
+# Source0-md5:	5a64e942654c123ffb14907b6a6092b1
 URL:		http://www.andrewchatham.com/pyogg/
 BuildRequires:	libvorbis-devel
 BuildRequires:	python-devel
