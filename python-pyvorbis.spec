@@ -16,6 +16,7 @@ BuildRequires:	python-devel
 BuildRequires:	libvorbis-devel
 BuildRequires:	python-pyogg-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+Obsoletes:	pyvorbis
 
 %description
 pyvorbis is a wrapper for libvorbis, a compressed audio format
@@ -29,6 +30,7 @@ skompresowanego.
 Summary:	pyvorbis header and example programs
 Group:		Development/Languages/Python
 Requires:	%{name} = %{version}
+Obsolete:	pyvorbis-devel
 
 %description devel
 pyvorbis is a wrapper for libvorbis, a compressed audio format
