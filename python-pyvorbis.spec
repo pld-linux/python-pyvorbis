@@ -13,7 +13,6 @@ URL:		http://www.andrewchatham.com/pyogg/
 BuildRequires:	libvorbis-devel
 BuildRequires:	python-devel
 BuildRequires:	python-pyogg-devel
-BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.174
 %pyrequires_eq	python-modules
 Requires:	python-pyogg
