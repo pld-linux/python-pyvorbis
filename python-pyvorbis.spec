@@ -1,20 +1,20 @@
 %include        /usr/lib/rpm/macros.python
 %define		module pyvorbis
+Summary:	A Python module for the the Ogg/Vorbis library
+Summary(pl):	Modu³ pythona do biblioteki Ogg/Vorbis
 Name:		python-%{module}
 Version:	1.2
 Release:	1
-Summary:	A Python module for the the Ogg/Vorbis library
-Summary(pl):	Modu³ pythona do biblioteki Ogg/Vorbis
-Group:		Libraries/Python
 License:	GPL
-URL:		http://www.andrewchatham.com/pyogg/
+Group:		Libraries/Python
 Source0:	http://www.andrewchatham.com/pyogg/download/%{module}-%{version}.tar.gz
-Requires:	python-modules
-Requires:	libvorbis
-Requires:	python-pyogg
-BuildRequires:	python-devel
+URL:		http://www.andrewchatham.com/pyogg/
 BuildRequires:	libvorbis-devel
+BuildRequires:	python-devel
 BuildRequires:	python-pyogg-devel
+BuildRequires:	rpm-pythonprov
+Requires:	python-modules
+Requires:	python-pyogg
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	pyvorbis
 
@@ -23,28 +23,25 @@ pyvorbis is a wrapper for libvorbis, a compressed audio format
 library.
 
 %description -l pl
-pyvorbis jest wrapperem dla biblioteki libvorbis, formatu
-skompresowanego.
+pyvorbis jest wrapperem dla libvorbis - biblioteki obs³uguj±cej d¼wiêk
+w formacie skompresowanym.
 
 %package devel
-Summary:	pyvorbis header and example programs
+Summary:	pyvorbis headers and example programs
+Summary(pl):	Pliki nag³ówkowe i programy przyk³adowe dla modu³u pyvorbis
 Group:		Development/Languages/Python
 Requires:	%{name} = %{version}
 Obsoletes:	pyvorbis-devel
 
 %description devel
 pyvorbis is a wrapper for libvorbis, a compressed audio format
-library.
-
-Install python-pyvorbis-devel if you need the API documentation and
-example programs.
+library. This package contains the header files and example programs
+for pyvorbis module.
 
 %description devel -l pl
-pyvorbis jest wrapperem dla biblioteki libvorbis, formatu
-skompresowanego.
-
-Zainstaluj tê paczkê je¶li potrzebujesz dokumentacjê API oraz
-przyk³adowe programy.
+pyvorbis jest wrapperem dla libvorbis - biblioteki obs³uguj±cej d¼wiêk
+w formacie skompresowanym. Ten pakiet zawiera pliki nag³ówkowe i
+programy przyk³adowe dla modu³y pyvorbis.
 
 %prep
 %setup -q -n %{module}-%{version}
@@ -68,11 +65,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%dir %{py_sitedir}/ogg
-%attr(755,root,root) %{py_sitedir}/ogg/*.so
 %doc AUTHORS ChangeLog README NEWS
+%attr(755,root,root) %{py_sitedir}/ogg/*.so
 
 %files devel
 %defattr(644,root,root,755)
-%{py_incdir}/%{module}
 %doc test/*
+%{py_incdir}/%{module}
