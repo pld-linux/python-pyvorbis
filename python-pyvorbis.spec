@@ -1,7 +1,7 @@
 %include        /usr/lib/rpm/macros.python
-%define		module pyvorbis
+%define		module	pyvorbis
 Summary:	A Python module for the the Ogg/Vorbis library
-Summary(pl):	Modu³ pythona do biblioteki Ogg/Vorbis
+Summary(pl):	Modu³ Pythona do biblioteki Ogg/Vorbis
 Name:		python-%{module}
 Version:	1.3
 Release:	1
