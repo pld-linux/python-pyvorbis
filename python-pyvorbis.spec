@@ -3,12 +3,13 @@
 Summary:	A Python module for the the Ogg/Vorbis library
 Summary(pl):	Modu³ pythona do biblioteki Ogg/Vorbis
 Name:		python-%{module}
-Version:	1.2
+Version:	1.3
 Release:	1
 License:	GPL
 Group:		Libraries/Python
+#Source0Download: http://www.andrewchatham.com/pyogg/
 Source0:	http://www.andrewchatham.com/pyogg/download/%{module}-%{version}.tar.gz
-# Source0-md5:	5a64e942654c123ffb14907b6a6092b1
+# Source0-md5:	3ddd0dc996b57827c324910cc899d40b
 URL:		http://www.andrewchatham.com/pyogg/
 BuildRequires:	libvorbis-devel
 BuildRequires:	python-devel
@@ -57,7 +58,9 @@ python setup.py build
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{py_incdir}/%{module}
-python setup.py install --root $RPM_BUILD_ROOT
+
+python setup.py install \
+	--root $RPM_BUILD_ROOT
 
 install src/*.h $RPM_BUILD_ROOT%{py_incdir}/%{module}
 chmod -x test/*
