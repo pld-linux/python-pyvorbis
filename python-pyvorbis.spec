@@ -31,6 +31,7 @@ Summary:	pyvorbis headers and example programs
 Summary(pl):	Pliki nag³ówkowe i programy przyk³adowe dla modu³u pyvorbis
 Group:		Development/Languages/Python
 Requires:	%{name} = %{version}
+Requires:	libvorbis-devel
 Obsoletes:	pyvorbis-devel
 
 %description devel
