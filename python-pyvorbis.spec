@@ -24,7 +24,7 @@ pyvorbis is a wrapper for libvorbis, a compressed audio format library.
 pyvorbis jest wrapperem dla biblioteki libvorbis, formatu skompresowanego.
 
 %package devel
-Summary:	pyogg header and example programs
+Summary:	pyvorbis header and example programs
 Group:		Development/Languages/Python
 Requires:	%{name} = %{version}
 
