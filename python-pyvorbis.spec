@@ -3,7 +3,7 @@ Summary:	A Python module for the the Ogg/Vorbis library
 Summary(pl):	Modu³ Pythona do biblioteki Ogg/Vorbis
 Name:		python-%{module}
 Version:	1.3
-Release:	1
+Release:	2
 License:	GPL
 Group:		Libraries/Python
 #Source0Download: http://www.andrewchatham.com/pyogg/
@@ -14,7 +14,8 @@ BuildRequires:	libvorbis-devel
 BuildRequires:	python-devel
 BuildRequires:	python-pyogg-devel
 BuildRequires:	rpm-pythonprov
-Requires:	python-modules
+BuildRequires:	rpmbuild(macros) >= 1.174
+%pyrequires_eq	python-modules
 Requires:	python-pyogg
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	pyvorbis
@@ -31,7 +32,8 @@ w formacie skompresowanym.
 Summary:	pyvorbis headers and example programs
 Summary(pl):	Pliki nag³ówkowe i programy przyk³adowe dla modu³u pyvorbis
 Group:		Development/Languages/Python
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
+%pyrequires_eq	python-devel
 Requires:	libvorbis-devel
 Obsoletes:	pyvorbis-devel
 
