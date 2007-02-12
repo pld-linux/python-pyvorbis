@@ -1,6 +1,6 @@
 %define		module	pyvorbis
 Summary:	A Python module for the the Ogg/Vorbis library
-Summary(pl):	Modu≥ Pythona do biblioteki Ogg/Vorbis
+Summary(pl.UTF-8):   Modu≈Ç Pythona do biblioteki Ogg/Vorbis
 Name:		python-%{module}
 Version:	1.4
 Release:	2
@@ -22,13 +22,13 @@ Obsoletes:	pyvorbis
 pyvorbis is a wrapper for libvorbis, a compressed audio format
 library.
 
-%description -l pl
-pyvorbis jest wrapperem dla libvorbis - biblioteki obs≥uguj±cej dºwiÍk
+%description -l pl.UTF-8
+pyvorbis jest wrapperem dla libvorbis - biblioteki obs≈ÇugujƒÖcej d≈∫wiƒôk
 w formacie skompresowanym.
 
 %package devel
 Summary:	pyvorbis headers and example programs
-Summary(pl):	Pliki nag≥Ûwkowe i programy przyk≥adowe dla modu≥u pyvorbis
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe i programy przyk≈Çadowe dla modu≈Çu pyvorbis
 Group:		Development/Languages/Python
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 %pyrequires_eq	python-devel
@@ -40,10 +40,10 @@ pyvorbis is a wrapper for libvorbis, a compressed audio format
 library. This package contains the header files and example programs
 for pyvorbis module.
 
-%description devel -l pl
-pyvorbis jest wrapperem dla libvorbis - biblioteki obs≥uguj±cej dºwiÍk
-w formacie skompresowanym. Ten pakiet zawiera pliki nag≥Ûwkowe i
-programy przyk≥adowe dla modu≥y pyvorbis.
+%description devel -l pl.UTF-8
+pyvorbis jest wrapperem dla libvorbis - biblioteki obs≈ÇugujƒÖcej d≈∫wiƒôk
+w formacie skompresowanym. Ten pakiet zawiera pliki nag≈Ç√≥wkowe i
+programy przyk≈Çadowe dla modu≈Çy pyvorbis.
 
 %prep
 %setup -q -n %{module}-%{version}
