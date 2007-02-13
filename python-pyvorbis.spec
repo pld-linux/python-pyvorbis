@@ -1,6 +1,6 @@
 %define		module	pyvorbis
 Summary:	A Python module for the the Ogg/Vorbis library
-Summary(pl.UTF-8):   Moduł Pythona do biblioteki Ogg/Vorbis
+Summary(pl.UTF-8):	Moduł Pythona do biblioteki Ogg/Vorbis
 Name:		python-%{module}
 Version:	1.4
 Release:	2
@@ -28,7 +28,7 @@ w formacie skompresowanym.
 
 %package devel
 Summary:	pyvorbis headers and example programs
-Summary(pl.UTF-8):   Pliki nagłówkowe i programy przykładowe dla modułu pyvorbis
+Summary(pl.UTF-8):	Pliki nagłówkowe i programy przykładowe dla modułu pyvorbis
 Group:		Development/Languages/Python
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 %pyrequires_eq	python-devel
