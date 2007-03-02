@@ -3,7 +3,7 @@ Summary:	A Python module for the the Ogg/Vorbis library
 Summary(pl.UTF-8):	Moduł Pythona do biblioteki Ogg/Vorbis
 Name:		python-%{module}
 Version:	1.4
-Release:	2
+Release:	3
 License:	GPL
 Group:		Libraries/Python
 Source0:	http://ekyo.nerim.net/software/pyogg/%{module}-%{version}.tar.gz
@@ -57,12 +57,14 @@ python setup.py build
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{py_incdir}/%{module}
+install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 python setup.py install \
 	--root $RPM_BUILD_ROOT
 
 install src/*.h $RPM_BUILD_ROOT%{py_incdir}/%{module}
 chmod -x test/*
+install test/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -71,8 +73,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README NEWS
 %attr(755,root,root) %{py_sitedir}/ogg/*.so
+%{_examplesdir}/%{name}-%{version}
 
 %files devel
 %defattr(644,root,root,755)
-%doc test/*
 %{py_incdir}/%{module}
