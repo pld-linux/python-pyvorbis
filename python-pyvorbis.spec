@@ -28,7 +28,7 @@ w formacie skompresowanym.
 
 %package devel
 Summary:	pyvorbis headers and example programs
-Summary(pl.UTF-8):	Pliki nagłówkowe i programy przykładowe dla modułu pyvorbis
+Summary(pl.UTF-8):	Pliki nagłówkowe modułu pyvorbis
 Group:		Development/Languages/Python
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 %pyrequires_eq	python-devel
