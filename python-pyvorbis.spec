@@ -8,7 +8,7 @@ License:	GPL
 Group:		Libraries/Python
 Source0:	http://ekyo.nerim.net/software/pyogg/%{module}-%{version}.tar.gz
 # Source0-md5:	b4921e792c0a74f75b9d3057df10ee7c
-URL:		http://ekyo.nerim.net/software/pyogg/index.html
+URL:		http://ekyo.nerim.net/software/pyogg/
 BuildRequires:	libvorbis-devel
 BuildRequires:	python-devel
 BuildRequires:	python-pyogg-devel
