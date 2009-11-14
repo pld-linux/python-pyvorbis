@@ -13,6 +13,7 @@ BuildRequires:	libvorbis-devel
 BuildRequires:	python-devel
 BuildRequires:	python-pyogg-devel
 BuildRequires:	rpmbuild(macros) >= 1.174
+BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-modules
 Requires:	python-pyogg
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
