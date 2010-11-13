@@ -3,7 +3,7 @@ Summary:	A Python module for the the Ogg/Vorbis library
 Summary(pl.UTF-8):	Moduł Pythona do biblioteki Ogg/Vorbis
 Name:		python-%{module}
 Version:	1.4
-Release:	6
+Release:	7
 License:	GPL
 Group:		Libraries/Python
 Source0:	http://ekyo.nerim.net/software/pyogg/%{module}-%{version}.tar.gz
