@@ -3,11 +3,12 @@ Summary:	A Python module for the the Ogg/Vorbis library
 Summary(pl.UTF-8):	Moduł Pythona do biblioteki Ogg/Vorbis
 Name:		python-%{module}
 Version:	1.4
-Release:	7
+Release:	8
 License:	GPL
 Group:		Libraries/Python
 Source0:	http://ekyo.nerim.net/software/pyogg/%{module}-%{version}.tar.gz
 # Source0-md5:	b4921e792c0a74f75b9d3057df10ee7c
+Patch0:		pyvorbis-double_free.patch
 URL:		http://ekyo.nerim.net/software/pyogg/
 BuildRequires:	libvorbis-devel
 BuildRequires:	python-devel
@@ -48,6 +49,7 @@ programy przykładowe dla moduły pyvorbis.
 
 %prep
 %setup -q -n %{module}-%{version}
+%patch0 -p1
 
 %build
 python config_unix.py \
@@ -74,6 +76,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README NEWS
 %attr(755,root,root) %{py_sitedir}/ogg/*.so
+%attr(755,root,root) %{py_sitedir}/*.egg-info
 %{_examplesdir}/%{name}-%{version}
 
 %files devel
