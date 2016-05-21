@@ -17,8 +17,8 @@ BuildRequires:	rpmbuild(macros) >= 1.710
 BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-modules
 Requires:	python-pyogg
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	pyvorbis
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 pyvorbis is a wrapper for libvorbis, a compressed audio format
@@ -52,9 +52,9 @@ programy przykładowe dla moduły pyvorbis.
 %patch0 -p1
 
 %build
-python config_unix.py \
+%{__python} config_unix.py \
 	---prefix %{_prefix}
-python setup.py config
+%{__python} setup.py config
 %py_build
 
 %install
@@ -62,8 +62,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{py_incdir}/%{module}
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
-%py_install \
-	--root $RPM_BUILD_ROOT
+%py_install
 
 install src/*.h $RPM_BUILD_ROOT%{py_incdir}/%{module}
 chmod -x test/*
@@ -74,9 +73,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog README NEWS
-%attr(755,root,root) %{py_sitedir}/ogg/*.so
-%attr(755,root,root) %{py_sitedir}/*.egg-info
+%doc AUTHORS ChangeLog NEWS README
+%attr(755,root,root) %{py_sitedir}/ogg/vorbis.so
+%if "%{py_ver}" >= "2.5"
+%{py_sitedir}/pyvorbis-%{version}-py*.egg-info
+%endif
 %{_examplesdir}/%{name}-%{version}
 
 %files devel
